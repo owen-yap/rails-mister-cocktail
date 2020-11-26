@@ -1,0 +1,14 @@
+<div class="container hero">
+    <h1 class="d-inline-block">Liquer Club</h1>
+    <%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-danger ml-auto" %>
+</div>
+<div class="container">
+  <% @cocktails.each do |cocktail| %>  
+    <div class="card p-4 mt-3">
+      <h3 class="card-title"><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></h3>
+      <% cocktail.ingredients.each do |ingredient| %>
+        <p class="mb-2 text-muted"><%= ingredient.name %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
