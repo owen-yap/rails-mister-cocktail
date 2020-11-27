@@ -5,17 +5,30 @@
         <h1>Liquer Club</h1>
         <h3>Create and share</h3>    
       </div>
-      <img class="col col-lg-6 col-sm-12" src="https://cdn.dribbble.com/users/297873/screenshots/14214116/media/a2f985d449b7c90139c5f2ee9b424409.jpg" alt="Liquer Club">
+      <img class="col-12 col-lg-6" src="https://cdn.dribbble.com/users/297873/screenshots/14214116/media/a2f985d449b7c90139c5f2ee9b424409.jpg" alt="Liquer Club">
     </div>
 </div>
 <div class="container">
-<%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-danger" %>
-  <% @cocktails.each do |cocktail| %>  
-    <div class="card p-4 mt-3">
-      <h3 class="card-title"><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></h3>
-      <% cocktail.ingredients.each do |ingredient| %>
-        <p class="mb-2 text-muted"><%= ingredient.name %></p>
-      <% end %>
-    </div>
-  <% end %>
+<%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-danger mt-3" %>
+<div class="row">  
+    <% @cocktails.each do |cocktail| %>  
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card mt-3 mb-3">
+        <% if cocktail.photo.attached? %>
+          <%= link_to cl_image_tag(cocktail.photo.key,  width: 400, crop: :fill, class: "card-img-top"), cocktail_path(cocktail.id) %>
+        <% end %>
+          <div class="card-body">
+            <h3 class="card-title"><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></h3>
+            <p class="mb-2 text-muted">
+              <% arr = [] %>
+              <% cocktail.ingredients.each do |ingredient| %>
+                <% arr << ingredient.name %>
+              <% end %>
+              <%= arr.join(" | ") %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
 </div>

@@ -1,5 +1,7 @@
-<div class="container">
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="show-content">
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, width: 800, crop: :fill, class: "my-3 mx-auto show-img" %>
+  <% end %>
   <h1><%= @cocktail.name %></h1>
   <h3>Ingredients</h3>
   <ol>
@@ -13,6 +15,6 @@
       </li>
     <% end %>
   </ol>
-  <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-danger" %>
-  <%= link_to "View more cocktails", cocktails_path, class: "btn btn-primary" %>
+  <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-danger mb-3" %>
+  <%= link_to "View more cocktails", cocktails_path, class: "btn btn-primary mb-3" %>
 </div>
