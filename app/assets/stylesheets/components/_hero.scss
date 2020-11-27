@@ -1,0 +1,29 @@
+.hero {
+  background-color: $primary;
+
+  img {
+    width: 50%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: auto 0;
+
+    h1 {
+      color: white;
+      font-size: 6rem;
+    }
+
+    h3 {
+      color: $secondary;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+}

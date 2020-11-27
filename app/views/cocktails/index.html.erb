@@ -1,8 +1,15 @@
-<div class="container hero">
-    <h1 class="d-inline-block">Liquer Club</h1>
-    <%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-danger ml-auto" %>
+<div class="hero container-fluid">
+    <div class="row justify-content-md-center">
+      <div class="content col col-lg-6 col-sm-12" >
+        <%= image_tag "cocktail.svg" %>
+        <h1>Liquer Club</h1>
+        <h3>Create and share</h3>    
+      </div>
+      <img class="col col-lg-6 col-sm-12" src="https://cdn.dribbble.com/users/297873/screenshots/14214116/media/a2f985d449b7c90139c5f2ee9b424409.jpg" alt="Liquer Club">
+    </div>
 </div>
 <div class="container">
+<%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-danger" %>
   <% @cocktails.each do |cocktail| %>  
     <div class="card p-4 mt-3">
       <h3 class="card-title"><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></h3>

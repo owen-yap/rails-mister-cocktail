@@ -3,19 +3,22 @@
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
 
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Titillium+Web:wght@400;600;700&display=swap');
+
 // General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$font-family-sans-serif:  'Titillium Web', sans-serif;
+$headings-font-family:    'Amaranth', sans-serif;
+$body-bg:                #2F0912;
 $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    #05042A;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+$body-bg-color: black;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
