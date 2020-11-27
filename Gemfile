@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'autoprefixer-rails'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 
